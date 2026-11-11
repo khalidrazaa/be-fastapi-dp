@@ -1,0 +1,62 @@
+{
+	"folders": [
+		{
+			"name": "be-fastapi-dp",
+			"path": "."
+		},
+		{
+			"name": "packages-dp",
+			"path": "../packages-dp"
+		},
+		{
+			"name": "ui-nextjs-dp",
+			"path": "../ui-nextjs-dp"
+		}
+	],
+	"settings": {
+		"git.autoRepositoryDetection": true,
+		"search.exclude": {
+			"**/.venv": true,
+			"**/node_modules": true
+		}
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Codespaces: set up all repositories",
+				"type": "process",
+				"command": "node",
+				"args": ["${workspaceFolder:be-fastapi-dp}/.devcontainer/bootstrap.mjs"],
+				"options": { "cwd": "${workspaceFolder:be-fastapi-dp}" },
+				"problemMatcher": []
+			},
+			{
+				"label": "UI: dev",
+				"type": "process",
+				"command": "bun",
+				"args": ["run", "dev", "--strictPort"],
+				"options": { "cwd": "${workspaceFolder:ui-nextjs-dp}" },
+				"isBackground": true,
+				"problemMatcher": []
+			},
+			{
+				"label": "UI: build",
+				"type": "process",
+				"command": "bun",
+				"args": ["run", "build"],
+				"options": { "cwd": "${workspaceFolder:ui-nextjs-dp}" },
+				"group": "build",
+				"problemMatcher": []
+			},
+			{
+				"label": "UI: typecheck",
+				"type": "process",
+				"command": "bun",
+				"args": ["run", "lint"],
+				"options": { "cwd": "${workspaceFolder:ui-nextjs-dp}" },
+				"problemMatcher": "$tsc"
+			}
+		]
+	}
+}

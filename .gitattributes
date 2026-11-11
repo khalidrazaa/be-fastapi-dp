@@ -1,0 +1,5 @@
+* text=auto
+*.mjs text eol=lf
+.devcontainer/Dockerfile text eol=lf
+*.json text eol=lf
+*.code-workspace text eol=lf

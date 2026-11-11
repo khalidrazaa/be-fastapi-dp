@@ -1,0 +1,57 @@
+{
+  "name": "Data platform — all repositories",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/node:2": {
+      "version": "24"
+    },
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "remoteUser": "vscode",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "postCreateCommand": "node .devcontainer/bootstrap.mjs",
+  "waitFor": "postCreateCommand",
+  "forwardPorts": [3000, 8000],
+  "portsAttributes": {
+    "3000": {
+      "label": "Web UI",
+      "onAutoForward": "notify"
+    },
+    "8000": {
+      "label": "FastAPI (when implemented)",
+      "onAutoForward": "notify"
+    }
+  },
+  "customizations": {
+    "codespaces": {
+      "repositories": {
+        "khalidrazaa/packages-dp": {
+          "permissions": {
+            "contents": "write"
+          }
+        },
+        "khalidrazaa/ui-nextjs-dp": {
+          "permissions": {
+            "contents": "write"
+          }
+        }
+      },
+      "openFiles": ["docs/codespaces.md", "data-plateform.code-workspace"]
+    },
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "charliermarsh.ruff",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode"
+      ],
+      "settings": {
+        "python.defaultInterpreterPath": "${workspaceFolder}/.venv",
+        "terminal.integrated.defaultProfile.linux": "bash"
+      }
+    }
+  }
+}

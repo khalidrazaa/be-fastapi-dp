@@ -1,5 +1,20 @@
 # Multi-Source MIS & Management Reporting Automation
 
+## GitHub Codespaces
+
+This repository is the development entry point for `be-fastapi-dp`, `packages-dp`,
+and `ui-nextjs-dp`. Its dev container installs Python, Node.js, Bun, and uv; clones
+the sibling repositories; and prepares their dependencies.
+
+Create a codespace from this repository, authorize access to the two sibling
+repositories, then open `data-plateform.code-workspace` with **File → Open Workspace
+from File**. Start the frontend with **Terminal → Run Task → UI: dev** and open
+port **3000**.
+
+See [the Codespaces guide](docs/codespaces.md) for setup, branches, credentials,
+Python environments, and troubleshooting. The UI currently uses Vite/React; the
+FastAPI and packages repositories are development scaffolds.
+
 An end-to-end consulting-style data solution for a fictional mid-sized company that currently prepares management MIS manually from multiple data sources.
 
 The project demonstrates how fragmented operational and reporting data can be transformed into a reliable, automated management reporting platform.
