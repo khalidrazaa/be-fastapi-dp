@@ -17,7 +17,13 @@
 		"git.autoRepositoryDetection": true,
 		"search.exclude": {
 			"**/.venv": true,
-			"**/node_modules": true
+			"**/node_modules": true,
+			"**/.next": true,
+			"**/out": true,
+			"**/.cache": true
+		},
+		"files.watcherExclude": {
+			"**/.next/**": true
 		}
 	},
 	"tasks": {
@@ -35,7 +41,7 @@
 				"label": "UI: dev",
 				"type": "process",
 				"command": "bun",
-				"args": ["run", "dev", "--strictPort"],
+				"args": ["run", "dev"],
 				"options": { "cwd": "${workspaceFolder:ui-nextjs-dp}" },
 				"isBackground": true,
 				"problemMatcher": []
@@ -47,6 +53,16 @@
 				"args": ["run", "build"],
 				"options": { "cwd": "${workspaceFolder:ui-nextjs-dp}" },
 				"group": "build",
+				"problemMatcher": []
+			},
+			{
+				"label": "UI: start",
+				"type": "process",
+				"command": "bun",
+				"args": ["run", "start"],
+				"options": { "cwd": "${workspaceFolder:ui-nextjs-dp}" },
+				"dependsOn": "UI: build",
+				"isBackground": true,
 				"problemMatcher": []
 			},
 			{

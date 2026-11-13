@@ -12,8 +12,8 @@ from File**. Start the frontend with **Terminal → Run Task → UI: dev** and o
 port **3000**.
 
 See [the Codespaces guide](docs/codespaces.md) for setup, branches, credentials,
-Python environments, and troubleshooting. The UI currently uses Vite/React; the
-FastAPI and packages repositories are development scaffolds.
+Python environments, and troubleshooting. The UI uses Next.js App Router and
+React; the FastAPI and packages repositories are development scaffolds.
 
 An end-to-end consulting-style data solution for a fictional mid-sized company that currently prepares management MIS manually from multiple data sources.
 

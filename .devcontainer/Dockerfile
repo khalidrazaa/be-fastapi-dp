@@ -1,5 +1,5 @@
 FROM ghcr.io/astral-sh/uv:0.13.7 AS uv
-FROM oven/bun:1 AS bun
+FROM oven/bun:1.4.4 AS bun
 
 FROM mcr.microsoft.com/devcontainers/python:1-3.12-bookworm
 
